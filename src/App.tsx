@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { UserPlus, RefreshCw, Database, Wifi, WifiOff } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { UserPlus, RefreshCw, Wifi, WifiOff } from "lucide-react";
 import { User } from "./types/user";
 import { apiService, ApiError } from "./services/apiService";
 import { UserCard } from "./components/UserCard";
@@ -230,11 +230,7 @@ function App() {
               variant="info"
               message="Running in offline mode with local data storage. All changes are temporary and stored in browser memory."
               className="border-blue-300"
-            >
-              <div className="flex items-center gap-2">
-                <Database className="h-4 w-4" />
-              </div>
-            </Alert>
+            />
           </div>
         )}
 

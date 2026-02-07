@@ -125,10 +125,10 @@ class ApiService {
   async createUser(userData: CreateUserDto): Promise<User> {
     if (this.useMockData) {
       await this.simulateDelay();
-      const newUser: User = {
+      const newUser = {
         id: String(this.nextId++),
         ...userData,
-      };
+      } as User;
       this.mockUsers.push(newUser);
       return newUser;
     }
@@ -139,10 +139,10 @@ class ApiService {
     } catch (error) {
       if (this.useMockData) {
         // Retry with mock data after network error
-        const newUser: User = {
+        const newUser = {
           id: String(this.nextId++),
           ...userData,
-        };
+        } as User;
         this.mockUsers.push(newUser);
         return newUser;
       }
